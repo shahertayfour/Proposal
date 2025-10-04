@@ -56,20 +56,20 @@ const CoverSlide = ({ slide }) => {
         </div>
 
         {/* Bottom section */}
-        <div className="flex items-center justify-center gap-12 mb-20">
+        <div className="flex items-center justify-center gap-8 mb-20">
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">Step 1</div>
-            <div className="text-sm uppercase tracking-widest opacity-80">Lab Setup</div>
+            <div className="text-xs uppercase tracking-wide opacity-80">Lab Setup</div>
           </div>
           <div className="w-px h-16 bg-white/30" />
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">Step 2</div>
-            <div className="text-sm uppercase tracking-widest opacity-80">Delivery Partner</div>
+            <div className="text-xs uppercase tracking-wide opacity-80">Launch School of Coding</div>
           </div>
           <div className="w-px h-16 bg-white/30" />
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">2.5 Months</div>
-            <div className="text-sm uppercase tracking-widest opacity-80">Timeline</div>
+            <div className="text-xs uppercase tracking-wide opacity-80">Timeline</div>
           </div>
         </div>
       </div>
