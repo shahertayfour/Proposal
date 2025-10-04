@@ -1,0 +1,179 @@
+import React, { useState, useEffect, useCallback } from 'react';
+import { slideData, presentationMeta } from '../data/slideContent';
+import NavBar from './ui/NavBar';
+
+// Import all slide components
+import CoverSlide from './slides/CoverSlide';
+import ExecutiveSummarySlide from './slides/ExecutiveSummarySlide';
+import OutcomesSlide from './slides/OutcomesSlide';
+import ProposalSlide from './slides/ProposalSlide';
+import ScopeExclusionsSlide from './slides/ScopeExclusionsSlide';
+import PillarsSlide from './slides/PillarsSlide';
+import UserExperienceSlide from './slides/UserExperienceSlide';
+import RoadmapSlide from './slides/RoadmapSlide';
+import GovernanceSlide from './slides/GovernanceSlide';
+import CommercialSlide from './slides/CommercialSlide';
+import VisionSlide from './slides/VisionSlide';
+import NextStepsSlide from './slides/NextStepsSlide';
+
+/**
+ * Main Presentation Component
+ * Handles navigation, keyboard shortcuts, and slide rendering
+ */
+const MaharatProposal = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPrintMode, setIsPrintMode] = useState(false);
+
+  // Navigation functions
+  const goToNext = useCallback(() => {
+    setCurrentSlide((prev) =>
+      prev < slideData.length - 1 ? prev + 1 : prev
+    );
+  }, []);
+
+  const goToPrevious = useCallback(() => {
+    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
+  }, []);
+
+  const goToFirst = useCallback(() => {
+    setCurrentSlide(0);
+  }, []);
+
+  const goToLast = useCallback(() => {
+    setCurrentSlide(slideData.length - 1);
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      switch (e.key) {
+        case 'ArrowRight':
+        case ' ':
+          e.preventDefault();
+          goToNext();
+          break;
+        case 'ArrowLeft':
+          e.preventDefault();
+          goToPrevious();
+          break;
+        case 'Home':
+          e.preventDefault();
+          goToFirst();
+          break;
+        case 'End':
+          e.preventDefault();
+          goToLast();
+          break;
+        case 'p':
+        case 'P':
+          e.preventDefault();
+          window.print();
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToNext, goToPrevious, goToFirst, goToLast]);
+
+  // Detect print mode
+  useEffect(() => {
+    const handleBeforePrint = () => setIsPrintMode(true);
+    const handleAfterPrint = () => setIsPrintMode(false);
+
+    window.addEventListener('beforeprint', handleBeforePrint);
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    return () => {
+      window.removeEventListener('beforeprint', handleBeforePrint);
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, []);
+
+  // Render appropriate slide component based on type
+  const renderSlide = (slide) => {
+    const slideComponents = {
+      'cover': CoverSlide,
+      'executive-summary': ExecutiveSummarySlide,
+      'outcomes': OutcomesSlide,
+      'proposal': ProposalSlide,
+      'scope-exclusions': ScopeExclusionsSlide,
+      'pillars': PillarsSlide,
+      'user-experience': UserExperienceSlide,
+      'roadmap': RoadmapSlide,
+      'governance': GovernanceSlide,
+      'commercial': CommercialSlide,
+      'vision': VisionSlide,
+      'next-steps': NextStepsSlide,
+    };
+
+    const SlideComponent = slideComponents[slide.type];
+    return SlideComponent ? <SlideComponent slide={slide} /> : null;
+  };
+
+  return (
+    <div className="relative w-full min-h-screen bg-white">
+      {/* Print mode: Show all slides */}
+      {isPrintMode ? (
+        <div className="print-slides">
+          {slideData.map((slide) => (
+            <div
+              key={slide.id}
+              className="slide-page w-full h-screen break-after-page"
+            >
+              {renderSlide(slide)}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          {/* Presentation mode: Show current slide */}
+          <div className="w-full h-screen overflow-hidden">
+            <div
+              className="transition-opacity duration-300"
+              key={currentSlide}
+            >
+              {renderSlide(slideData[currentSlide])}
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <NavBar
+            currentSlide={currentSlide}
+            totalSlides={slideData.length}
+            onPrevious={goToPrevious}
+            onNext={goToNext}
+            isPrintMode={isPrintMode}
+          />
+        </>
+      )}
+
+      {/* Print styles */}
+      <style jsx global>{`
+        @media print {
+          @page {
+            size: landscape;
+            margin: 0;
+          }
+
+          body {
+            margin: 0;
+            padding: 0;
+          }
+
+          .slide-page {
+            page-break-after: always;
+          }
+
+          .slide-page:last-child {
+            page-break-after: auto;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default MaharatProposal;
