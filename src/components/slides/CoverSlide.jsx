@@ -7,7 +7,7 @@ import { typography, spacing } from '../../styles/colors';
  */
 const CoverSlide = ({ slide }) => {
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-primary-blue1 via-primary-blue2 to-accent-purple1 overflow-hidden">
+    <div className="relative w-full h-screen bg-gradient-to-br from-primary-blue1 via-primary-blue2 to-accent-purple1 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-3xl" />
@@ -15,7 +15,7 @@ const CoverSlide = ({ slide }) => {
       </div>
 
       {/* Content wrapper */}
-      <div className="relative z-10 h-full flex flex-col justify-between text-white p-16">
+      <div className="relative z-10 h-full flex flex-col justify-between text-white px-16 py-12">
         {/* Top section - Logos */}
         <div className="flex items-center justify-between">
           <img
