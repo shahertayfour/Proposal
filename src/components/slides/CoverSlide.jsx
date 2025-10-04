@@ -56,7 +56,7 @@ const CoverSlide = ({ slide }) => {
         </div>
 
         {/* Bottom section */}
-        <div className="flex items-center justify-center gap-12">
+        <div className="flex items-center justify-center gap-12 mb-20">
           <div className="text-center">
             <div className="text-6xl font-bold mb-2">01</div>
             <div className="text-sm uppercase tracking-widest opacity-80">Lab Setup</div>
