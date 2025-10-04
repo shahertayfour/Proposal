@@ -15,7 +15,7 @@ const CoverSlide = ({ slide }) => {
       </div>
 
       {/* Content wrapper */}
-      <div className="relative z-10 h-full flex flex-col justify-between text-white px-16 py-12">
+      <div className="relative z-10 h-full flex flex-col text-white px-16 py-12">
         {/* Top section - Logos */}
         <div className="flex items-center justify-between">
           <img
@@ -31,7 +31,7 @@ const CoverSlide = ({ slide }) => {
         </div>
 
         {/* Main content - centered and expanded */}
-        <div className="flex-1 flex flex-col items-center justify-center space-y-12 animate-fade-in">
+        <div className="flex-1 flex flex-col items-center justify-center space-y-12 animate-fade-in -mt-12">
           {/* Badge */}
           <div className="inline-block px-8 py-3 bg-white/20 backdrop-blur-md rounded-full border border-white/30 shadow-xl">
             <span className="text-base font-bold tracking-widest uppercase">Partnership Proposal 2025</span>
@@ -50,26 +50,28 @@ const CoverSlide = ({ slide }) => {
           </div>
 
           {/* Subtitle */}
-          <p className="text-4xl font-light leading-relaxed tracking-wide opacity-95 text-center max-w-5xl">
+          <p className="text-3xl font-light leading-relaxed tracking-wider opacity-90 text-center max-w-5xl">
             {slide.subtitle}
           </p>
         </div>
 
-        {/* Bottom section */}
-        <div className="flex items-center justify-center gap-8 mb-20">
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">Step 1</div>
-            <div className="text-xs uppercase tracking-wide opacity-80">Lab Setup</div>
-          </div>
-          <div className="w-px h-16 bg-white/30" />
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">Step 2</div>
-            <div className="text-xs uppercase tracking-wide opacity-80">Launch School of Coding</div>
-          </div>
-          <div className="w-px h-16 bg-white/30" />
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">2.5 Months</div>
-            <div className="text-xs uppercase tracking-wide opacity-80">Timeline</div>
+        {/* Bottom section - centered at page middle */}
+        <div className="absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center pointer-events-none">
+          <div className="flex items-center justify-center gap-8 mt-[65vh] pointer-events-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold mb-2">Step 1</div>
+              <div className="text-xs uppercase tracking-wide opacity-80">Lab Setup</div>
+            </div>
+            <div className="w-px h-16 bg-white/30" />
+            <div className="text-center">
+              <div className="text-3xl font-bold mb-2">Step 2</div>
+              <div className="text-xs uppercase tracking-wide opacity-80">Launch School of Coding</div>
+            </div>
+            <div className="w-px h-16 bg-white/30" />
+            <div className="text-center">
+              <div className="text-3xl font-bold mb-2">2.5 Months</div>
+              <div className="text-xs uppercase tracking-wide opacity-80">Timeline</div>
+            </div>
           </div>
         </div>
       </div>

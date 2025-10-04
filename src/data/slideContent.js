@@ -9,7 +9,7 @@ export const slideData = [
     id: 1,
     type: "cover",
     title: "Maharat × ADGM Academy",
-    subtitle: "Stage 1 — Lab Environment Setup (Enablement)",
+    subtitle: "A Strategic Proposal for Excellence in Technology Education",
     tagline: "Vision: Official School of Coders Delivery Partner"
   },
 
