@@ -13,52 +13,52 @@ const ADGMCover = ({ slide }) => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-20 max-w-6xl mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-12 lg:px-20 max-w-6xl mx-auto">
         {/* Logos at top */}
-        <div className="absolute top-16 left-0 right-0 flex items-center justify-center gap-8">
+        <div className="absolute top-8 sm:top-12 md:top-16 left-0 right-0 flex items-center justify-center gap-3 sm:gap-5 md:gap-8 px-4">
           <img
             src="/maharat_logo.png"
             alt="Maharat Logo"
-            className="h-20 object-contain drop-shadow-2xl"
+            className="h-10 sm:h-14 md:h-16 lg:h-20 object-contain drop-shadow-2xl"
           />
-          <div className="text-white/30 text-4xl font-thin">×</div>
+          <div className="text-white/30 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-thin">×</div>
           <img
             src="/ADGM.png"
             alt="ADGM Academy Logo"
-            className="h-20 object-contain drop-shadow-2xl brightness-0 invert"
+            className="h-10 sm:h-14 md:h-16 lg:h-20 object-contain drop-shadow-2xl brightness-0 invert"
           />
         </div>
 
         {/* Main title */}
-        <div className="mb-12">
-          <h1 className="text-8xl font-black text-white leading-tight mb-6 tracking-tight drop-shadow-2xl">
+        <div className="mb-6 sm:mb-8 md:mb-12 mt-20 sm:mt-24 md:mt-0">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black text-white leading-tight mb-3 sm:mb-4 md:mb-6 tracking-tight drop-shadow-2xl px-2">
             {slide.title}
           </h1>
-          <div className="flex justify-center mb-6">
-            <div className="w-32 h-2 bg-gradient-to-r from-[#0EA5E9] to-[#00B7FF] rounded-full shadow-lg"></div>
+          <div className="flex justify-center mb-3 sm:mb-4 md:mb-6">
+            <div className="w-20 sm:w-24 md:w-32 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-[#0EA5E9] to-[#00B7FF] rounded-full shadow-lg"></div>
           </div>
-          <p className="text-3xl text-white/95 font-light tracking-wide mb-4">
+          <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-light tracking-wide mb-2 sm:mb-3 md:mb-4 px-4">
             {slide.subtitle}
           </p>
         </div>
 
         {/* Tagline */}
-        <div className="bg-white/15 backdrop-blur-lg border-2 border-white/30 rounded-2xl px-12 py-6 shadow-2xl max-w-4xl">
-          <p className="text-2xl text-white font-medium leading-relaxed">
+        <div className="bg-white/15 backdrop-blur-lg border-2 border-white/30 rounded-xl sm:rounded-2xl px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 shadow-2xl max-w-4xl mx-4">
+          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white font-medium leading-relaxed">
             {slide.tagline}
           </p>
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-20 left-0 right-0">
-          <p className="text-lg text-white/70 font-light tracking-wider">
+        <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 left-0 right-0 px-4">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/70 font-light tracking-wider">
             {slide.footer}
           </p>
         </div>
 
         {/* Slide number */}
-        <div className="absolute bottom-8 right-20">
-          <span className="text-white/40 text-sm font-light">01 / 06</span>
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-8 md:right-20">
+          <span className="text-white/40 text-xs sm:text-sm font-light">01 / 06</span>
         </div>
       </div>
     </div>
