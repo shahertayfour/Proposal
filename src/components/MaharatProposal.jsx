@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { slideData, presentationMeta } from '../data/slideContent';
 import NavBar from './ui/NavBar';
-import ProgressIndicator from './ui/ProgressIndicator';
+import SlideNavigation from './ui/SlideNavigation';
+import NarrativeBanner from './ui/NarrativeBanner';
 
 // Import all slide components
 import CoverSlide from './slides/CoverSlide';
@@ -154,13 +155,18 @@ const MaharatProposal = () => {
             </div>
           </div>
 
-          {/* Progress Indicator - Shows slide count and progress */}
-          <ProgressIndicator
+          {/* Top Right Menu - Interactive navigation */}
+          <SlideNavigation
             currentSlide={currentSlide}
             totalSlides={slideData.length}
+            onNavigate={goToSlide}
+            slideData={slideData}
           />
 
-          {/* Navigation Controls - Arrow buttons to move between slides */}
+          {/* Narrative Banner - Contextual quotes */}
+          <NarrativeBanner narrative={slideData[currentSlide].narrative} />
+
+          {/* Enhanced Navigation - Progress, controls, and slide counter */}
           <NavBar
             currentSlide={currentSlide}
             totalSlides={slideData.length}
