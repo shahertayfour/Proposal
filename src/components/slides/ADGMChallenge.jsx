@@ -1,55 +1,76 @@
 import React from 'react';
-import { AlertTriangle } from 'lucide-react';
+import { Target, Lightbulb } from 'lucide-react';
 
 /**
- * Challenge Slide - The issue with callout box
+ * Challenge Slide - Optimized for readability and information density
  */
 const ADGMChallenge = ({ slide }) => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white">
-      {/* Subtle gradient accent */}
-      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-[#F3F4F6] to-transparent"></div>
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#1B365D] via-[#2D4A7C] to-[#1B365D]">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0EA5E9] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      </div>
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-20 max-w-7xl mx-auto py-20">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-7xl font-bold text-[#1B365D] mb-6">
+      <div className="relative z-10 h-full flex flex-col justify-center px-16 max-w-7xl mx-auto py-12">
+        {/* Header with icon - Compact */}
+        <div className="mb-8 text-center">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#0EA5E9] to-[#00B7FF] rounded-2xl flex items-center justify-center shadow-2xl">
+              <Target className="w-8 h-8 text-white" strokeWidth={2} />
+            </div>
+          </div>
+          <h2 className="text-5xl font-black text-white mb-3 tracking-tight">
             {slide.title}
           </h2>
-          <div className="w-32 h-1.5 bg-[#0EA5E9] mb-8"></div>
-          <p className="text-2xl text-[#4B5563] font-light max-w-4xl">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-1.5 bg-gradient-to-r from-[#0EA5E9] to-[#00B7FF] rounded-full"></div>
+          </div>
+          <p className="text-xl text-white/90 font-light max-w-4xl mx-auto leading-relaxed">
             {slide.subline}
           </p>
         </div>
 
-        {/* Bullets */}
-        <div className="space-y-6 mb-16 max-w-5xl">
+        {/* Challenge Points - Optimized spacing */}
+        <div className="grid grid-cols-1 gap-4 mb-8 max-w-6xl mx-auto">
           {slide.bullets.map((bullet, index) => (
-            <div key={index} className="flex items-start gap-5">
-              <div className="w-4 h-4 rounded-full bg-[#4B5563] flex-shrink-0 mt-3"></div>
-              <p className="text-2xl text-[#4B5563] leading-relaxed font-light">
-                {bullet}
-              </p>
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-8 py-4 hover:bg-white/15 transition-all duration-300 shadow-lg"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-[#0EA5E9] to-[#00B7FF] rounded-full flex items-center justify-center shadow-md mt-0.5">
+                  <span className="text-white font-bold text-base">{index + 1}</span>
+                </div>
+                <p className="text-lg text-white/95 leading-relaxed font-light">
+                  {bullet}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Callout box */}
-        <div className="max-w-4xl">
-          <div className="bg-gradient-to-br from-[#0EA5E9]/5 via-[#009A44]/5 to-[#0EA5E9]/5 border-l-4 border-[#009A44] p-10 rounded-2xl shadow-lg">
-            <div className="flex items-start gap-6">
-              <AlertTriangle className="w-10 h-10 text-[#009A44] flex-shrink-0 mt-1" strokeWidth={2} />
-              <p className="text-2xl font-semibold text-[#1B365D] leading-relaxed">
-                {slide.callout}
-              </p>
+        {/* Solution Callout - Compact with icon */}
+        <div className="max-w-6xl mx-auto">
+          <div className="relative bg-gradient-to-r from-[#0EA5E9] via-[#00B7FF] to-[#0EA5E9] rounded-2xl px-10 py-7 shadow-2xl border-2 border-white/20">
+            {/* Icon badge */}
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <Lightbulb className="w-5 h-5 text-[#0EA5E9]" strokeWidth={2.5} />
+              </div>
             </div>
+
+            <p className="text-xl font-bold text-white leading-relaxed text-center pt-2">
+              {slide.callout}
+            </p>
           </div>
         </div>
 
         {/* Slide number */}
-        <div className="absolute bottom-16 right-20">
-          <span className="text-[#4B5563]/40 text-sm font-light">03 / 05</span>
+        <div className="absolute bottom-8 right-20">
+          <span className="text-white/40 text-sm font-light">03 / 06</span>
         </div>
       </div>
     </div>

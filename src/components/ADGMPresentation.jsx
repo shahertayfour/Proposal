@@ -7,6 +7,7 @@ import ADGMAbout from './slides/ADGMAbout';
 import ADGMChallenge from './slides/ADGMChallenge';
 import ADGMPlan from './slides/ADGMPlan';
 import ADGMPrograms from './slides/ADGMPrograms';
+import ADGMNextSteps from './slides/ADGMNextSteps';
 
 /**
  * ADGM Academy × Maharat Presentation
@@ -92,6 +93,7 @@ const ADGMPresentation = () => {
       'challenge': ADGMChallenge,
       'plan': ADGMPlan,
       'programs': ADGMPrograms,
+      'nextsteps': ADGMNextSteps,
     };
 
     const SlideComponent = slideComponents[slide.type];

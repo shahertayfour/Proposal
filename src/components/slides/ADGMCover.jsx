@@ -1,71 +1,64 @@
 import React from 'react';
-import { Code2 } from 'lucide-react';
 
 /**
- * Cover Slide - Hero landing with gradient
+ * Cover Slide - Unified professional design
  */
 const ADGMCover = ({ slide }) => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#1B365D] via-[#2D4A7C] to-[#0EA5E9]">
-      {/* Decorative elements */}
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#1B365D] via-[#2D4A7C] to-[#1B365D]">
+      {/* Decorative overlay pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-white rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#009A44] rounded-full blur-3xl transform -translate-x-1/3 translate-y-1/3"></div>
+        <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#0EA5E9] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-20 max-w-6xl mx-auto">
         {/* Logos at top */}
-        <div className="absolute top-12 left-20 right-20 flex items-center justify-between">
+        <div className="absolute top-16 left-0 right-0 flex items-center justify-center gap-8">
           <img
             src="/maharat_logo.png"
             alt="Maharat Logo"
-            className="h-16 object-contain"
+            className="h-20 object-contain drop-shadow-2xl"
           />
-          <div className="flex items-center gap-6">
-            <span className="text-white/40 text-2xl font-light">×</span>
-            <img
-              src="/ADGM.png"
-              alt="ADGM Academy Logo"
-              className="h-16 object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Icon accent */}
-        <div className="mb-10">
-          <Code2 className="w-20 h-20 text-[#009A44] opacity-90" strokeWidth={1.5} />
+          <div className="text-white/30 text-4xl font-thin">×</div>
+          <img
+            src="/ADGM.png"
+            alt="ADGM Academy Logo"
+            className="h-20 object-contain drop-shadow-2xl brightness-0 invert"
+          />
         </div>
 
         {/* Main title */}
-        <h1 className="text-8xl font-bold text-white leading-tight mb-8 tracking-tight">
-          {slide.title}
-        </h1>
-
-        {/* Subtitle with glass morphism */}
-        <div className="inline-block max-w-fit bg-white/10 backdrop-blur-md px-10 py-5 rounded-2xl border border-white/20 mb-12">
-          <p className="text-3xl text-white font-medium tracking-wide">
+        <div className="mb-12">
+          <h1 className="text-8xl font-black text-white leading-tight mb-6 tracking-tight drop-shadow-2xl">
+            {slide.title}
+          </h1>
+          <div className="flex justify-center mb-6">
+            <div className="w-32 h-2 bg-gradient-to-r from-[#0EA5E9] to-[#00B7FF] rounded-full shadow-lg"></div>
+          </div>
+          <p className="text-3xl text-white/95 font-light tracking-wide mb-4">
             {slide.subtitle}
           </p>
         </div>
 
         {/* Tagline */}
-        <div className="mt-8 max-w-4xl">
-          <p className="text-2xl text-[#0EA5E9] font-semibold tracking-wide">
+        <div className="bg-white/15 backdrop-blur-lg border-2 border-white/30 rounded-2xl px-12 py-6 shadow-2xl max-w-4xl">
+          <p className="text-2xl text-white font-medium leading-relaxed">
             {slide.tagline}
           </p>
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-16 left-20">
-          <p className="text-base text-white/70 font-light tracking-wider">
+        <div className="absolute bottom-20 left-0 right-0">
+          <p className="text-lg text-white/70 font-light tracking-wider">
             {slide.footer}
           </p>
         </div>
 
         {/* Slide number */}
-        <div className="absolute bottom-16 right-20">
-          <span className="text-white/50 text-sm font-light">01 / 05</span>
+        <div className="absolute bottom-8 right-20">
+          <span className="text-white/40 text-sm font-light">01 / 06</span>
         </div>
       </div>
     </div>

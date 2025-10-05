@@ -1,98 +1,170 @@
 import React from 'react';
-import { GraduationCap, ArrowRight } from 'lucide-react';
+import { GraduationCap, Layers, Info } from 'lucide-react';
 
 /**
- * Programs & Next Steps Slide - Course table and next steps with CTA
+ * Programs Slide - 4-card layout with 3 pillars + info card
  */
 const ADGMPrograms = ({ slide }) => {
-  return (
-    <div className="relative w-full h-screen overflow-hidden bg-white">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F3F4F6] via-white to-[#F3F4F6]"></div>
+  const pillarData = [
+    {
+      name: 'Artificial Intelligence',
+      icon: '🧠',
+      gradient: 'from-[#1B365D] to-[#2D4A7C]',
+      bgColor: 'bg-slate-50/80'
+    },
+    {
+      name: 'Coding & Development',
+      icon: '💻',
+      gradient: 'from-[#0EA5E9] to-[#00B7FF]',
+      bgColor: 'bg-blue-50/80'
+    },
+    {
+      name: 'Digital Transformation',
+      icon: '🌐',
+      gradient: 'from-[#1B365D] to-[#0EA5E9]',
+      bgColor: 'bg-cyan-50/80'
+    }
+  ];
 
+  return (
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-white via-gray-50 to-slate-100">
       {/* Main content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-20 max-w-7xl mx-auto py-10 pb-32">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex items-center gap-4 mb-3">
-            <GraduationCap className="w-10 h-10 text-[#0EA5E9]" strokeWidth={2} />
-            <h2 className="text-4xl font-bold text-[#1B365D] leading-tight">
-              {slide.title}
-            </h2>
+      <div className="relative z-10 h-full flex flex-col px-16 max-w-7xl mx-auto py-8 pb-20">
+        {/* Header - Compact */}
+        <div className="mb-6 text-center">
+          <div className="flex justify-center mb-3">
+            <div className="w-14 h-14 bg-gradient-to-br from-[#0EA5E9] to-[#00B7FF] rounded-xl flex items-center justify-center shadow-lg">
+              <GraduationCap className="w-7 h-7 text-white" strokeWidth={2} />
+            </div>
           </div>
-          <div className="w-24 h-1.5 bg-[#0EA5E9] ml-14 mb-3"></div>
-          <p className="text-base text-[#4B5563] font-light max-w-4xl ml-14">
+          <h2 className="text-4xl font-black text-[#1B365D] mb-2 tracking-tight">
+            Training Portfolio
+          </h2>
+          <div className="flex justify-center mb-3">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#0EA5E9] to-[#00B7FF] rounded-full"></div>
+          </div>
+          <p className="text-sm text-[#4B5563] font-light max-w-4xl mx-auto">
             {slide.subline}
           </p>
         </div>
 
-        {/* Course Table */}
-        <div className="mb-4">
-          <p className="text-sm font-semibold text-[#1B365D] mb-3 uppercase tracking-wider">
-            Sample Courses
-          </p>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-            {/* Table header */}
-            <div className="grid grid-cols-4 gap-4 bg-gradient-to-r from-[#1B365D] to-[#2D4A7C] px-6 py-3">
-              <div className="text-sm font-semibold text-white uppercase tracking-wide">Pillar</div>
-              <div className="text-sm font-semibold text-white uppercase tracking-wide">Course</div>
-              <div className="text-sm font-semibold text-white uppercase tracking-wide">Level</div>
-              <div className="text-sm font-semibold text-white uppercase tracking-wide">Price</div>
-            </div>
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-4 gap-4 flex-1">
+          {/* Three Pillar Cards */}
+          {slide.pillars.map((pillar, pillarIndex) => {
+            const pillarStyle = pillarData[pillarIndex];
 
-            {/* Table rows */}
-            {slide.courses.map((course, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-4 gap-4 px-6 py-3 ${
-                  index % 2 === 0 ? 'bg-[#F3F4F6]' : 'bg-white'
-                } hover:bg-[#0EA5E9]/5 transition-colors duration-200`}
-              >
-                <div className="text-sm font-semibold text-[#1B365D]">{course.pillar}</div>
-                <div className="text-sm text-[#4B5563] font-light">{course.course}</div>
-                <div className="text-sm text-[#4B5563] font-light">{course.level}</div>
-                <div className="text-sm font-medium text-[#009A44]">{course.price}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+            return (
+              <div key={pillarIndex} className="flex flex-col">
+                {/* Pillar Header */}
+                <div className={`bg-gradient-to-br ${pillarStyle.gradient} rounded-t-xl px-4 py-3 shadow-lg`}>
+                  <div className="text-center">
+                    <div className="text-3xl mb-1">{pillarStyle.icon}</div>
+                    <h3 className="text-sm font-bold text-white leading-tight">
+                      {pillarStyle.name}
+                    </h3>
+                  </div>
+                </div>
 
-        {/* Next Steps */}
-        <div className="mb-4">
-          <p className="text-sm font-semibold text-[#1B365D] mb-3 uppercase tracking-wider">
-            Next Steps
-          </p>
-          <div className="space-y-2 max-w-5xl">
-            {slide.nextSteps.map((step, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <ArrowRight className="w-5 h-5 text-[#0EA5E9] flex-shrink-0 mt-1" strokeWidth={2.5} />
-                <p className="text-base text-[#4B5563] leading-relaxed font-light">
-                  {step}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+                {/* Programs List */}
+                <div className="bg-white rounded-b-xl shadow-lg border-2 border-gray-200 flex-1 p-3">
+                  <div className="space-y-2">
+                    {pillar.programs.map((program, programIndex) => (
+                      <div key={programIndex} className={`${pillarStyle.bgColor} rounded-lg p-2.5 border border-gray-200`}>
+                        {/* Level Badge */}
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-xs font-bold text-gray-700 bg-white px-2 py-0.5 rounded-full border border-gray-300">
+                            {program.level}
+                          </span>
+                          <span className="text-xs text-gray-600 font-medium">{program.duration}</span>
+                        </div>
 
-        {/* CTA */}
-        <div className="max-w-5xl mt-3">
-          <div className="bg-gradient-to-r from-[#009A44] via-[#00B852] to-[#009A44] p-6 rounded-2xl shadow-xl">
-            <div className="flex items-center justify-between">
-              <p className="text-xl font-bold text-white leading-relaxed">
-                {slide.cta}
-              </p>
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all duration-300 cursor-pointer">
-                  <ArrowRight className="w-7 h-7 text-white" strokeWidth={3} />
+                        {/* Title */}
+                        <h4 className="text-xs font-bold text-[#1B365D] mb-1 leading-tight">
+                          {program.title}
+                        </h4>
+
+                        {/* Price */}
+                        <div className="text-xs font-bold text-[#0EA5E9]">
+                          {program.price}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
+            );
+          })}
+
+          {/* 4th Card - Scalability & Variety Info */}
+          <div className="flex flex-col">
+            {/* Info Header */}
+            <div className="bg-gradient-to-br from-[#1B365D] to-[#2D4A7C] rounded-t-xl px-4 py-3 shadow-lg">
+              <div className="text-center">
+                <div className="text-3xl mb-1">
+                  <Layers className="w-8 h-8 text-white mx-auto" />
+                </div>
+                <h3 className="text-sm font-bold text-white leading-tight">
+                  Our Capabilities
+                </h3>
+              </div>
             </div>
+
+            {/* Info Content */}
+            <div className="bg-white rounded-b-xl shadow-lg border-2 border-gray-200 flex-1 p-3 flex flex-col justify-between">
+              <div>
+                {/* Sample Note */}
+
+
+                {/* Key Features */}
+                <div className="space-y-2.5 mb-3">
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9] mt-1.5 flex-shrink-0"></div>
+                    <div className="text-xs text-gray-700 leading-relaxed">
+                      <span className="font-bold">Scalable:</span> Small teams to large cohorts
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9] mt-1.5 flex-shrink-0"></div>
+                    <div className="text-xs text-gray-700 leading-relaxed">
+                      <span className="font-bold">Comprehensive:</span> Full spectrum of tech
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9] mt-1.5 flex-shrink-0"></div>
+                    <div className="text-xs text-gray-700 leading-relaxed">
+                      <span className="font-bold">Progressive:</span> Beginner to expert
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9] mt-1.5 flex-shrink-0"></div>
+                    <div className="text-xs text-gray-700 leading-relaxed">
+                      <span className="font-bold">Flexible:</span> Multiple delivery formats
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Box */}
+
+
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing Note */}
+        <div className="mt-4 bg-gradient-to-r from-[#1B365D] via-[#2D4A7C] to-[#1B365D] rounded-xl px-6 py-3 shadow-xl">
+          <div className="flex items-center gap-3">
+            <Layers className="w-4 h-4 text-white flex-shrink-0" />
+            <p className="text-xs text-white font-medium leading-relaxed">
+              <span className="font-bold">Flexible Pricing:</span> {slide.pricingNote}
+            </p>
           </div>
         </div>
 
         {/* Slide number */}
-        <div className="absolute bottom-12 right-20">
-          <span className="text-[#4B5563]/40 text-sm font-light">05 / 05</span>
+        <div className="absolute bottom-6 right-20">
+          <span className="text-[#4B5563]/40 text-sm font-light">05 / 06</span>
         </div>
       </div>
     </div>
