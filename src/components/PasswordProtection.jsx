@@ -81,12 +81,12 @@ const PasswordProtection = ({ onAuthenticate }) => {
         <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
           <div className="flex items-center gap-2">
             <Users className="w-4 h-4 sm:w-5 sm:h-5 text-[#0EA5E9]" strokeWidth={2} />
-            <span className="text-xs sm:text-sm text-[#4B5563] font-medium">50+ Partners</span>
+            <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Multiple Partners</span>
           </div>
           <div className="w-px h-4 bg-gray-300"></div>
           <div className="flex items-center gap-2">
             <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-[#0EA5E9]" strokeWidth={2} />
-            <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Multiple Proposals</span>
+            <span className="text-xs sm:text-sm text-[#4B5563] font-medium">Unified Proposal Portal</span>
           </div>
         </div>
 
