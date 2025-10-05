@@ -5,7 +5,7 @@ The ADGM presentation is password-protected to prevent unauthorized access.
 ## Default Password
 
 ```
-maharat2025
+Osama-6-10!
 ```
 
 ## Changing the Password
@@ -17,10 +17,10 @@ src/components/PasswordProtection.jsx
 
 Find the line:
 ```javascript
-const CORRECT_PASSWORD = 'maharat2025';
+const CORRECT_PASSWORD = 'Osama-6-10!';
 ```
 
-And replace `'maharat2025'` with your desired password.
+And replace `'Osama-6-10!'` with your desired password.
 
 ## Features
 

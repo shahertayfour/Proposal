@@ -11,7 +11,7 @@ const PasswordProtection = ({ onAuthenticate }) => {
   const [error, setError] = useState(false);
 
   // Set your password here
-  const CORRECT_PASSWORD = 'maharat2025';
+  const CORRECT_PASSWORD = 'Osama-6-10!';
 
   const handleSubmit = (e) => {
     e.preventDefault();
