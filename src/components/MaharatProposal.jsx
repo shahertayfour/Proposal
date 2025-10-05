@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { slideData, presentationMeta } from '../data/slideContent';
 import NavBar from './ui/NavBar';
+import SlideNavigation from './ui/SlideNavigation';
+import ProgressIndicator from './ui/ProgressIndicator';
+import SlideTransition from './ui/SlideTransition';
+import JourneyMap from './ui/JourneyMap';
+import NarrativeBanner from './ui/NarrativeBanner';
 
 // Import all slide components
 import CoverSlide from './slides/CoverSlide';
@@ -18,30 +23,40 @@ import NextStepsSlide from './slides/NextStepsSlide';
 
 /**
  * Main Presentation Component
- * Handles navigation, keyboard shortcuts, and slide rendering
+ * Premium interactive presentation with story-driven navigation
  */
 const MaharatProposal = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPrintMode, setIsPrintMode] = useState(false);
+  const [slideDirection, setSlideDirection] = useState('forward');
 
-  // Navigation functions
+  // Navigation functions with smooth transitions
   const goToNext = useCallback(() => {
+    setSlideDirection('forward');
     setCurrentSlide((prev) =>
       prev < slideData.length - 1 ? prev + 1 : prev
     );
   }, []);
 
   const goToPrevious = useCallback(() => {
+    setSlideDirection('backward');
     setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   }, []);
 
   const goToFirst = useCallback(() => {
+    setSlideDirection('backward');
     setCurrentSlide(0);
   }, []);
 
   const goToLast = useCallback(() => {
+    setSlideDirection('forward');
     setCurrentSlide(slideData.length - 1);
   }, []);
+
+  const goToSlide = useCallback((index) => {
+    setSlideDirection(index > currentSlide ? 'forward' : 'backward');
+    setCurrentSlide(index);
+  }, [currentSlide]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -129,17 +144,52 @@ const MaharatProposal = () => {
         </div>
       ) : (
         <>
-          {/* Presentation mode: Show current slide */}
-          <div className="w-full h-screen overflow-hidden">
+          {/* Presentation mode: Show current slide with smooth transitions */}
+          <div className="w-full h-screen overflow-hidden relative">
             <div
-              className="transition-opacity duration-300"
+              className={`transition-all duration-500 ease-out ${
+                slideDirection === 'forward'
+                  ? 'animate-slide-in-right'
+                  : 'animate-slide-in-left'
+              }`}
               key={currentSlide}
             >
               {renderSlide(slideData[currentSlide])}
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Interactive Navigation Menu */}
+          <SlideNavigation
+            currentSlide={currentSlide}
+            totalSlides={slideData.length}
+            onNavigate={goToSlide}
+            slideData={slideData}
+          />
+
+          {/* Visual Journey Map */}
+          <JourneyMap
+            currentSlide={currentSlide}
+            slideData={slideData}
+            onNavigate={goToSlide}
+          />
+
+          {/* Progress Indicator */}
+          <ProgressIndicator
+            currentSlide={currentSlide}
+            totalSlides={slideData.length}
+          />
+
+          {/* Story-Driven Transition Prompts */}
+          <SlideTransition
+            currentSlide={currentSlide}
+            nextSlide={currentSlide < slideData.length - 1 ? slideData[currentSlide + 1] : null}
+            onNext={goToNext}
+          />
+
+          {/* Narrative Banner */}
+          <NarrativeBanner narrative={slideData[currentSlide].narrative} />
+
+          {/* Classic Navigation (kept for compatibility) */}
           <NavBar
             currentSlide={currentSlide}
             totalSlides={slideData.length}

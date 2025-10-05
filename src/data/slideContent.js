@@ -10,7 +10,8 @@ export const slideData = [
     type: "cover",
     title: "Maharat × ADGM Academy",
     subtitle: "A Strategic Proposal for Excellence in Technology Education",
-    tagline: "Vision: Official School of Coders Delivery Partner"
+    tagline: "Vision: Official School of Coders Delivery Partner",
+    narrative: "Welcome to a transformative partnership journey—where innovation meets education excellence."
   },
 
   // Slide 2: Executive Summary
@@ -18,6 +19,7 @@ export const slideData = [
     id: 2,
     type: "executive-summary",
     title: "Executive Summary",
+    narrative: "The opportunity is clear: ADGM Academy needs a world-class technology education infrastructure. Here's how we deliver it.",
     sections: [
       {
         label: "IMMEDIATE ACTION",
@@ -48,6 +50,7 @@ export const slideData = [
     type: "outcomes",
     title: "Strategic Impact",
     subtitle: "Transformative Outcomes for Technology Education",
+    narrative: "Success isn't just about infrastructure—it's about measurable impact on education, learners, and the future of tech talent in the UAE.",
     outcomes: [
       "Deliver comprehensive hands-on training programs spanning AI, software development, cybersecurity, network engineering, and intelligent automation",
       "Establish a unified, enterprise-grade platform supporting cohort-based learning, innovation hackathons, and strategic partner activations",
@@ -60,6 +63,7 @@ export const slideData = [
     id: 4,
     type: "proposal",
     title: "Stage 1: Technical Foundation",
+    narrative: "Our solution combines cutting-edge technology with practical pedagogy—a turnkey platform ready to transform lives.",
     intro: "A comprehensive laboratory infrastructure designed to deliver:",
     bullets: [
       "Enterprise-grade secure training environments with industry-standard isolation protocols",
