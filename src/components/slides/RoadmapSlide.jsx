@@ -1,12 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TimelineBox from '../ui/TimelineBox';
 import { Calendar } from 'lucide-react';
 
 /**
  * Roadmap Slide - Slide 8
- * Clean professional implementation timeline
+ * Interactive implementation timeline with expandable phases
  */
 const RoadmapSlide = ({ slide }) => {
+  const [expandedPhase, setExpandedPhase] = useState(null);
+
+  // Detailed activities for each phase
+  const phaseActivities = [
+    [
+      "Infrastructure audit and capacity planning",
+      "Network topology design and VLAN configuration",
+      "Hardware compatibility assessment and procurement",
+      "Security architecture planning and compliance review",
+      "Backup and disaster recovery strategy development"
+    ],
+    [
+      "VM base image creation and hardening",
+      "Development tools and software installation",
+      "Network configuration and security implementation",
+      "Automation scripts and orchestration setup",
+      "Integration testing and performance tuning"
+    ],
+    [
+      "Comprehensive functional testing across all VMs",
+      "Security penetration testing and vulnerability assessment",
+      "Load testing and scalability validation",
+      "User acceptance testing (UAT) with pilot cohort",
+      "Bug fixes and optimization based on feedback"
+    ],
+    [
+      "Complete administrator and instructor guides",
+      "Student onboarding and troubleshooting manuals",
+      "Live training sessions for ADGM Academy staff",
+      "Handover of all source code and configuration files",
+      "Post-deployment support planning and SLA definition"
+    ]
+  ];
+
   return (
     <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-blue-50 via-slate-50/40 to-blue-50">
       {/* Content wrapper */}
@@ -29,6 +63,9 @@ const RoadmapSlide = ({ slide }) => {
             color={phase.color}
             animate={true}
             delay={index * 100}
+            activities={phaseActivities[index]}
+            isExpanded={expandedPhase === index}
+            onToggle={() => setExpandedPhase(expandedPhase === index ? null : index)}
           />
         ))}
       </div>
