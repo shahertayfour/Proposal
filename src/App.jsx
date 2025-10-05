@@ -1,14 +1,14 @@
 import React from 'react';
-import MaharatProposal from './components/MaharatProposal';
+import ADGMPresentation from './components/ADGMPresentation';
 
 /**
  * Main App Component
- * Entry point for the presentation
+ * Entry point for ADGM Academy × Maharat presentation
  */
 function App() {
   return (
     <div className="App">
-      <MaharatProposal />
+      <ADGMPresentation />
     </div>
   );
 }
