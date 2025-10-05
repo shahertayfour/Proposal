@@ -45,7 +45,7 @@ const GovernanceSlide = ({ slide }) => {
   };
 
   return (
-    <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-gray-50 via-slate-50/40 to-gray-50">
+    <div className="relative w-full min-h-screen px-16 pt-16 pb-40 flex flex-col bg-gradient-to-br from-gray-50 via-slate-50/40 to-gray-50">
       {/* Content wrapper */}
       <div className="h-full flex flex-col max-w-7xl mx-auto w-full">
         {/* Header with enhanced styling */}

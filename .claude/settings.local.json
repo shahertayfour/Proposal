@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nEnhance quote animations and fix slide content blocking\n\nQuote Banner Improvements:\n- Smooth scale and translate animations (700ms duration)\n- Elegant entrance with delayed fade-in\n- Animated quote icon with rotation effect\n- Added sparkle decoration with staggered animation\n- Glow effect behind banner for depth\n- Larger, more prominent styling (rounded-2xl)\n- Better border and shadow effects\n- Improved timing and easing\n\nSlide Layout Fixes:\n- Changed all slides from h-screen to min-h-screen\n- Increased bottom padding from p-16 to pb-40 (160px)\n- Prevents bottom navigation from blocking slide content\n- Maintains horizontal and top padding (px-16 pt-16)\n- Allows slides to grow beyond viewport if needed\n- Content now properly visible above slide switcher\n\nBenefits:\n- Quotes appear with elegant, professional animations\n- All slide content visible and accessible\n- No content hidden behind navigation controls\n- Flexible layout that adapts to content height\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

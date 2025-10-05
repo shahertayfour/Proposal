@@ -49,7 +49,7 @@ const OutcomesSlide = ({ slide }) => {
   ];
 
   return (
-    <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-blue-50 via-slate-50/50 to-blue-50">
+    <div className="relative w-full min-h-screen px-16 pt-16 pb-40 flex flex-col bg-gradient-to-br from-blue-50 via-slate-50/50 to-blue-50">
       {/* Content wrapper */}
       <div className="h-full flex flex-col max-w-6xl mx-auto w-full">
         {/* Header with enhanced typography */}
