@@ -85,6 +85,7 @@ export const slideData = [
     id: 5,
     type: "scope-exclusions",
     title: "Project Scope Definition",
+    narrative: "Clarity drives success—here's exactly what we're delivering and what stays with your team.",
     included: {
       title: "Within Project Scope",
       items: [
@@ -111,6 +112,7 @@ export const slideData = [
     id: 6,
     type: "pillars",
     title: "Educational Pillars: Stage 2",
+    narrative: "Three powerful pillars supporting a comprehensive technology education ecosystem for the future.",
     pillars: [
       {
         title: "Artificial Intelligence & Machine Learning",
@@ -136,6 +138,7 @@ export const slideData = [
     id: 7,
     type: "user-experience",
     title: "Stakeholder Experience",
+    narrative: "Every stakeholder matters—tailored experiences that deliver value to leadership, instructors, and students alike.",
     stakeholders: [
       {
         role: "LEADERSHIP & GOVERNANCE",
@@ -160,6 +163,7 @@ export const slideData = [
     id: 8,
     type: "roadmap",
     title: "Delivery Roadmap: Stage 1",
+    narrative: "A clear path to success—from assessment to deployment in just 8-10 weeks.",
     phases: [
       {
         number: 1,
@@ -194,6 +198,7 @@ export const slideData = [
     id: 9,
     type: "governance",
     title: "Governance Framework",
+    narrative: "Excellence through accountability—robust governance, technical controls, and measurable success metrics.",
     sections: [
       {
         title: "PROJECT GOVERNANCE",
@@ -218,6 +223,7 @@ export const slideData = [
     id: 10,
     type: "commercial",
     title: "Investment Structure: Stage 1",
+    narrative: "Flexible, transparent pricing with exceptional value—an investment in your institution's future.",
     sections: [
       {
         title: "ENGAGEMENT MODEL",
@@ -243,6 +249,7 @@ export const slideData = [
     type: "vision",
     title: "Future State: Stage 2",
     subtitle: "Becoming the Official School of Coders Delivery Partner",
+    narrative: "Beyond infrastructure—a long-term partnership transforming ADGM Academy into the region's premier tech talent hub.",
     sections: [
       {
         title: "OPERATIONAL SCOPE",
@@ -267,6 +274,7 @@ export const slideData = [
     id: 12,
     type: "next-steps",
     title: "Path Forward",
+    narrative: "Let's begin this journey together—four clear steps to transform technology education at ADGM Academy.",
     steps: [
       {
         number: 1,
