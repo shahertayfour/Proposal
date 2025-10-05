@@ -28,7 +28,7 @@ const RoadmapSlide = ({ slide }) => {
           </div>
         </div>
 
-      <div className="grid md:grid-cols-2 gap-8 flex-1 relative">
+      <div className="grid md:grid-cols-2 gap-10 flex-1 relative">
         {/* Connecting line visual */}
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-0.5 bg-gradient-to-r from-primary-blue1 via-accent-purple1 to-green-500 opacity-20" />
 
@@ -47,10 +47,12 @@ const RoadmapSlide = ({ slide }) => {
 
       {/* Total timeline with icon */}
       <div className="mt-10 pt-8">
-        <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 shadow-xl border-2 border-white/30">
+        <div className="bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg border-2 border-white/25 hover:border-white/50 transition-all duration-700">
           <div className="flex items-center justify-center gap-4 text-white">
-            <Calendar className="w-8 h-8" />
-            <p className="text-2xl font-bold">
+            <div className="w-14 h-14 bg-gradient-to-br from-primary-blue1 to-accent-purple1 rounded-2xl flex items-center justify-center shadow-premium">
+              <Calendar className="w-8 h-8" strokeWidth={2.5} />
+            </div>
+            <p className="text-3xl font-bold" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.02em' }}>
               {slide.total}
             </p>
           </div>

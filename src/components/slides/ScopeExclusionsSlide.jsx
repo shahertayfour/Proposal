@@ -27,22 +27,22 @@ const ScopeExclusionsSlide = ({ slide }) => {
           </div>
         </div>
 
-      <div className="grid md:grid-cols-2 gap-10 flex-1">
+      <div className="grid md:grid-cols-2 gap-10 flex-1 group">
         {/* Included */}
         <div className="animate-slide-in opacity-0" style={{ animationDelay: '0ms', animationFillMode: 'forwards' }}>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border-2 border-green-300/50 h-full">
+          <div className="bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] transition-all duration-700 h-full">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8 pb-6 border-b-2 border-white/20">
-              <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
-                <CheckCircle2 className="w-8 h-8 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <CheckCircle2 className="w-10 h-10 text-white" strokeWidth={3} />
               </div>
-              <h3 className={`${typography.h3} text-white`}>
+              <h3 className={`${typography.h3} text-white`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                 {slide.included.title}
               </h3>
             </div>
 
             {/* Items */}
-            <ul className="space-y-4">
+            <ul className="space-y-7">
               {slide.included.items.map((item, index) => (
                 <li
                   key={index}
@@ -51,7 +51,7 @@ const ScopeExclusionsSlide = ({ slide }) => {
                   <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center mt-0.5">
                     <CheckCircle2 className="w-5 h-5 text-white" strokeWidth={3} />
                   </div>
-                  <span className="text-lg text-white font-medium leading-relaxed transition-colors">
+                  <span className="text-2xl text-white font-medium leading-relaxed transition-colors" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                     {item}
                   </span>
                 </li>
@@ -62,19 +62,19 @@ const ScopeExclusionsSlide = ({ slide }) => {
 
         {/* Excluded */}
         <div className="animate-slide-in opacity-0" style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border-2 border-white/30 h-full">
+          <div className="bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] transition-all duration-700 h-full">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8 pb-6 border-b-2 border-white/20">
-              <div className="w-14 h-14 bg-gradient-to-br from-gray-400 to-gray-600 rounded-xl flex items-center justify-center shadow-lg">
-                <XCircle className="w-8 h-8 text-white" strokeWidth={2.5} />
+              <div className="w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <XCircle className="w-10 h-10 text-white" strokeWidth={3} />
               </div>
-              <h3 className={`${typography.h3} text-white`}>
+              <h3 className={`${typography.h3} text-white`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                 {slide.excluded.title}
               </h3>
             </div>
 
             {/* Items */}
-            <ul className="space-y-4">
+            <ul className="space-y-7">
               {slide.excluded.items.map((item, index) => (
                 <li
                   key={index}
@@ -83,7 +83,7 @@ const ScopeExclusionsSlide = ({ slide }) => {
                   <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center mt-0.5">
                     <XCircle className="w-5 h-5 text-white" strokeWidth={3} />
                   </div>
-                  <span className="text-lg text-white font-medium leading-relaxed transition-colors">
+                  <span className="text-2xl text-white font-medium leading-relaxed transition-colors" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                     {item}
                   </span>
                 </li>

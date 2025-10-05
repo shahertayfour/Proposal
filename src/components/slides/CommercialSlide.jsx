@@ -51,7 +51,7 @@ const CommercialSlide = ({ slide }) => {
           </div>
         </div>
 
-      <div className="space-y-6 flex-1">
+      <div className="space-y-8 flex-1">
         {slide.sections.map((section, index) => {
           const config = sectionConfig[section.color];
           const Icon = config.icon;
@@ -59,24 +59,24 @@ const CommercialSlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className={`group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-l-8 border-white/30 animate-slide-in opacity-0`}
+              className={`group relative bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg transition-all duration-700 border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] animate-slide-in opacity-0`}
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-8">
                 {/* Icon */}
-                <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${config.gradient} rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                  <Icon className="w-8 h-8 text-white" strokeWidth={2} />
+                <div className={`flex-shrink-0 w-20 h-20 bg-gradient-to-br ${config.gradient} rounded-2xl flex items-center justify-center shadow-premium transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className={`${typography.h3} text-white mb-4 font-bold`}>
+                  <h3 className={`${typography.h3} text-white mb-4 font-bold`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                     {section.title}
                   </h3>
-                  <p className="text-xl text-white/90 leading-relaxed">
+                  <p className="text-2xl text-white/90 leading-relaxed" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                     {section.content}
                   </p>
                 </div>

@@ -29,12 +29,12 @@ const TimelineBox = ({
 
   return (
     <div
-      className={`${colorVariants[color]} text-white p-6 rounded-lg transition-all duration-300 hover:scale-105 ${animationClass}`}
+      className={`${colorVariants[color]} text-white p-10 rounded-3xl shadow-premium hover:shadow-premium-lg border-2 border-white/25 hover:border-white/50 transition-all duration-700 hover:scale-[1.02] ${animationClass}`}
       style={style}
     >
-      <div className="text-3xl font-bold mb-2">{number}</div>
-      <h3 className="font-bold mb-3 text-lg">{title}</h3>
-      <p className="text-sm opacity-90">{duration}</p>
+      <div className="text-5xl font-bold mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.02em' }}>{number}</div>
+      <h3 className="font-bold mb-3 text-2xl" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>{title}</h3>
+      <p className="text-xl opacity-90" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>{duration}</p>
     </div>
   );
 };

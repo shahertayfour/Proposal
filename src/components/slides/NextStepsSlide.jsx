@@ -32,46 +32,46 @@ const NextStepsSlide = ({ slide }) => {
               <div className="absolute -bottom-2 left-0 w-24 h-1 bg-white/50 rounded-full" />
             </h2>
           </div>
-          <p className="text-xl text-white/80 mt-4">
+          <p className="text-2xl text-white/80 mt-4" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
             Your Roadmap to Success
           </p>
         </div>
 
-      <div className="grid md:grid-cols-2 gap-8 flex-1">
+      <div className="grid md:grid-cols-2 gap-10 flex-1">
         {slide.steps.map((step, index) => {
           const gradient = gradients[index % gradients.length];
 
           return (
             <div
               key={index}
-              className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-white/20 hover:border-white/40 animate-slide-in opacity-0"
+              className="group relative bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg transition-all duration-700 border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] animate-slide-in opacity-0"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
               {/* Number Badge */}
-              <div className={`absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl shadow-xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                <span className="text-3xl font-bold text-white">
+              <div className={`absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br ${gradient} rounded-2xl shadow-premium flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                <span className="text-4xl font-bold text-white" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
                   {step.number}
                 </span>
               </div>
 
               {/* Checkmark icon */}
               <div className="absolute top-4 right-4">
-                <CheckCircle2 className="w-8 h-8 text-green-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <CheckCircle2 className="w-10 h-10 text-green-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500" strokeWidth={2.5} />
               </div>
 
               {/* Content */}
               <div className="pt-6 pl-4">
-                <p className="text-xl text-white leading-relaxed font-medium">
+                <p className="text-2xl text-white leading-relaxed font-medium" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                   {step.content}
                 </p>
               </div>
 
               {/* Arrow indicator */}
-              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <ArrowRight className="w-6 h-6 text-white" />
+              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <ArrowRight className="w-8 h-8 text-white" strokeWidth={2.5} />
               </div>
 
               {/* Bottom gradient bar */}
@@ -83,11 +83,11 @@ const NextStepsSlide = ({ slide }) => {
 
       {/* Call to Action */}
       <div className="mt-12 pt-8">
-        <div className="bg-white/20 backdrop-blur-md rounded-2xl p-8 shadow-2xl text-center border-2 border-white/30">
-          <p className="text-3xl font-bold text-white mb-2">
+        <div className="bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg text-center border-2 border-white/25 hover:border-white/50 transition-all duration-700">
+          <p className="text-4xl font-bold text-white mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.02em' }}>
             Ready to Transform Education Together?
           </p>
-          <p className="text-xl text-white/90">
+          <p className="text-2xl text-white/90" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
             Let's build the future of tech education in the UAE
           </p>
         </div>

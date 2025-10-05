@@ -51,7 +51,7 @@ const UserExperienceSlide = ({ slide }) => {
           </div>
         </div>
 
-      <div className="grid md:grid-cols-3 gap-8 flex-1">
+      <div className="grid md:grid-cols-3 gap-10 flex-1">
         {slide.stakeholders.map((stakeholder, index) => {
           const config = stakeholderConfig[stakeholder.color];
           const Icon = config.icon;
@@ -59,24 +59,24 @@ const UserExperienceSlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className={`group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-t-8 border-white/30 flex flex-col animate-slide-in opacity-0`}
+              className={`group relative bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg transition-all duration-700 border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] flex flex-col animate-slide-in opacity-0`}
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
               {/* Icon */}
-              <div className={`w-16 h-16 bg-gradient-to-br ${config.gradient} rounded-xl flex items-center justify-center shadow-lg mb-6 transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300`}>
-                <Icon className="w-9 h-9 text-white" strokeWidth={2} />
+              <div className={`w-20 h-20 bg-gradient-to-br ${config.gradient} rounded-2xl flex items-center justify-center shadow-premium mb-6 transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500`}>
+                <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
               </div>
 
               {/* Role */}
-              <h3 className={`${typography.h3} text-white mb-4 font-bold`}>
+              <h3 className={`${typography.h3} text-white mb-4 font-bold`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                 {stakeholder.role}
               </h3>
 
               {/* Description */}
-              <p className="text-lg text-white/90 leading-relaxed flex-1">
+              <p className="text-2xl text-white/90 leading-relaxed flex-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
                 {stakeholder.description}
               </p>
 
