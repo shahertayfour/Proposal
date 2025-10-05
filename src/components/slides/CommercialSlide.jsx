@@ -32,16 +32,24 @@ const CommercialSlide = ({ slide }) => {
   };
 
   return (
-    <div className={`w-full h-full ${spacing.slide} flex flex-col bg-gradient-to-br from-white via-blue-50/20 to-green-50/20`}>
-      {/* Header */}
-      <div className="mb-12">
-        <div className="inline-block">
-          <h2 className={`${typography.h2} text-neutral-dark1 relative`}>
-            {slide.title}
-            <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-primary-blue1 to-accent-purple1 rounded-full" />
-          </h2>
-        </div>
+    <div className={`relative w-full h-screen ${spacing.slide} flex flex-col bg-gradient-to-br from-primary-blue1 via-primary-blue3 to-accent-purple2 overflow-hidden`}>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent-purple2/10 rounded-full blur-3xl" />
       </div>
+
+      {/* Content wrapper */}
+      <div className="relative z-10 h-full flex flex-col">
+        {/* Header */}
+        <div className="mb-12">
+          <div className="inline-block">
+            <h2 className={`${typography.h2} text-white relative`}>
+              {slide.title}
+              <div className="absolute -bottom-2 left-0 w-24 h-1 bg-white/50 rounded-full" />
+            </h2>
+          </div>
+        </div>
 
       <div className="space-y-6 flex-1">
         {slide.sections.map((section, index) => {
@@ -51,7 +59,7 @@ const CommercialSlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br ${config.bg} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-l-8 ${config.border} animate-slide-in opacity-0`}
+              className={`group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-l-8 border-white/30 animate-slide-in opacity-0`}
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
@@ -65,10 +73,10 @@ const CommercialSlide = ({ slide }) => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className={`${typography.h3} ${config.text} mb-4 font-bold`}>
+                  <h3 className={`${typography.h3} text-white mb-4 font-bold`}>
                     {section.title}
                   </h3>
-                  <p className="text-xl text-neutral-slate leading-relaxed">
+                  <p className="text-xl text-white/90 leading-relaxed">
                     {section.content}
                   </p>
                 </div>
@@ -77,10 +85,7 @@ const CommercialSlide = ({ slide }) => {
           );
         })}
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-green-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-radial from-primary-blue1/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+      </div>
     </div>
   );
 };
