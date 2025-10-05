@@ -8,12 +8,14 @@ import ADGMChallenge from './slides/ADGMChallenge';
 import ADGMPlan from './slides/ADGMPlan';
 import ADGMPrograms from './slides/ADGMPrograms';
 import ADGMNextSteps from './slides/ADGMNextSteps';
+import PasswordProtection from './PasswordProtection';
 
 /**
  * ADGM Academy × Maharat Presentation
  * Stage 1: School of Coders Lab Enablement
  */
 const ADGMPresentation = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPrintMode, setIsPrintMode] = useState(false);
   const [slideDirection, setSlideDirection] = useState('forward');
@@ -99,6 +101,11 @@ const ADGMPresentation = () => {
     const SlideComponent = slideComponents[slide.type];
     return SlideComponent ? <SlideComponent slide={slide} /> : null;
   };
+
+  // Show password protection if not authenticated
+  if (!isAuthenticated) {
+    return <PasswordProtection onAuthenticate={setIsAuthenticated} />;
+  }
 
   return (
     <div className="relative w-full min-h-screen bg-white">
