@@ -25,10 +25,10 @@ const NarrativeBanner = ({ narrative }) => {
 
   return (
     <div
-      className={`fixed top-20 left-1/2 -translate-x-1/2 z-20 transition-all duration-700 ease-out ${
+      className={`fixed bottom-36 left-1/2 -translate-x-1/2 z-45 transition-all duration-700 ease-out ${
         isVisible
           ? 'opacity-100 translate-y-0 scale-100'
-          : 'opacity-0 -translate-y-8 scale-95'
+          : 'opacity-0 translate-y-8 scale-95'
       }`}
     >
       <div className="relative">
