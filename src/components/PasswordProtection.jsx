@@ -13,7 +13,7 @@ const PasswordProtection = ({ onAuthenticate }) => {
   // Multi-proposal password system
   // Each password redirects to a different proposal
   const PROPOSAL_PASSWORDS = {
-    'Osama-6-10!': 'adgm', // ADGM Academy proposal
+    'ADGM$Lab!': 'adgm', // ADGM Academy proposal
     // Add more passwords for future proposals here
     // 'client2-pass': 'client2',
     // 'client3-pass': 'client3',

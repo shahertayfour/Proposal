@@ -5,7 +5,7 @@ The ADGM presentation is password-protected to prevent unauthorized access.
 ## Default Password
 
 ```
-Osama-6-10!
+ADGM$Lab!
 ```
 
 ## Changing the Password
@@ -17,10 +17,12 @@ src/components/PasswordProtection.jsx
 
 Find the line:
 ```javascript
-const CORRECT_PASSWORD = 'Osama-6-10!';
+const PROPOSAL_PASSWORDS = {
+  'ADGM$Lab!': 'adgm',
+};
 ```
 
-And replace `'Osama-6-10!'` with your desired password.
+And replace `'ADGM$Lab!'` with your desired password, or add additional passwords for multiple proposals.
 
 ## Features
 
