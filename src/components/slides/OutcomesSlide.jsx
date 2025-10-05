@@ -45,33 +45,34 @@ const OutcomesSlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-white/20 hover:border-white/40 animate-slide-in opacity-0"
+              className="group relative bg-white/10 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg hover:scale-[1.02] transition-all duration-700 border-2 border-white/25 hover:border-white/50 animate-slide-in opacity-0"
               style={{
                 animationDelay: `${index * 150}ms`,
                 animationFillMode: 'forwards'
               }}
             >
-              {/* Number badge */}
-              <div className={`absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl shadow-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
-                <span className="text-3xl font-bold text-white">{index + 1}</span>
+              {/* Number badge with premium design */}
+              <div className={`absolute -top-7 -left-7 w-20 h-20 bg-gradient-to-br ${gradient} rounded-3xl shadow-premium flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                <span className="text-4xl font-bold text-white" style={{textShadow: '0 2px 8px rgba(0,0,0,0.3)'}}>{index + 1}</span>
               </div>
 
-              {/* Icon */}
-              <div className="absolute top-8 right-8">
-                <div className={`w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center`}>
-                  <Icon className="w-10 h-10 text-white/50" />
+              {/* Icon with glow effect */}
+              <div className="absolute top-10 right-10 group-hover:scale-110 transition-transform duration-500">
+                <div className={`w-18 h-18 bg-white/15 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20`}>
+                  <Icon className="w-12 h-12 text-white/60" strokeWidth={2} />
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="pl-12 pt-4">
-                <p className="text-2xl text-white leading-relaxed font-medium">
+              {/* Content with better typography */}
+              <div className="pl-16 pt-6 pr-4">
+                <p className="text-2xl text-white leading-relaxed font-medium"
+                   style={{textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em'}}>
                   {outcome}
                 </p>
               </div>
 
-              {/* Decorative gradient line */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-white/30 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              {/* Decorative gradient line with smooth animation */}
+              <div className={`absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r ${gradient} rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out`} />
             </div>
           );
         })}

@@ -59,7 +59,7 @@ const ExecutiveSummarySlide = ({ slide }) => {
           </div>
         </div>
 
-      <div className="grid gap-6 flex-1">
+      <div className="grid gap-7 flex-1">
         {slide.sections.map((section, index) => {
           const config = sectionConfig[section.color];
           const Icon = config.icon;
@@ -67,24 +67,26 @@ const ExecutiveSummarySlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className={`${config.bg} ${config.border} border-l-8 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in opacity-0`}
+              className={`group ${config.bg} ${config.border} border-l-[6px] rounded-2xl p-8 shadow-premium hover:shadow-premium-lg hover:scale-[1.02] transition-all duration-500 animate-slide-in opacity-0`}
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
-              <div className="flex items-start gap-6">
-                {/* Icon */}
-                <div className={`flex-shrink-0 w-16 h-16 ${config.iconBg} rounded-xl flex items-center justify-center shadow-lg`}>
-                  <Icon className="w-8 h-8 text-white" />
+              <div className="flex items-start gap-8">
+                {/* Icon with premium styling */}
+                <div className={`flex-shrink-0 w-20 h-20 ${config.iconBg} rounded-2xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 space-y-2">
-                  <span className={`text-sm font-bold uppercase tracking-wider ${config.text}`}>
+                {/* Content with refined typography */}
+                <div className="flex-1 space-y-3">
+                  <span className={`text-sm font-bold uppercase tracking-[0.2em] ${config.text}`}
+                        style={{letterSpacing: '0.2em'}}>
                     {section.label}
                   </span>
-                  <p className="text-xl text-white leading-relaxed font-medium">
+                  <p className="text-2xl text-white leading-relaxed font-medium"
+                     style={{textShadow: '0 2px 10px rgba(0,0,0,0.1)'}}>
                     {section.content}
                   </p>
                 </div>

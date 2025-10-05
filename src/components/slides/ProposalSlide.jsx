@@ -32,27 +32,29 @@ const ProposalSlide = ({ slide }) => {
         </div>
 
       <div className="grid md:grid-cols-2 gap-8 flex-1">
-        {/* Left column - Main objectives */}
+        {/* Left column - Main objectives with premium design */}
         <div className="space-y-6">
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border-2 border-white/20">
-            <p className="text-2xl font-semibold text-white mb-8">
+          <div className="bg-white/12 backdrop-blur-lg p-10 rounded-3xl border-2 border-white/25 shadow-premium">
+            <p className="text-3xl font-semibold text-white mb-10"
+               style={{textShadow: '0 2px 15px rgba(0,0,0,0.2)', letterSpacing: '0.01em'}}>
               {slide.intro}
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
               {slide.bullets.map((bullet, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 bg-white/10 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 animate-slide-in opacity-0"
+                  className="group flex items-start gap-5 p-5 bg-white/10 rounded-2xl shadow-lg hover:shadow-premium hover:bg-white/15 hover:scale-[1.02] transition-all duration-500 animate-slide-in opacity-0"
                   style={{
                     animationDelay: `${index * 100}ms`,
                     animationFillMode: 'forwards'
                   }}
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                    <Check className="w-5 h-5 text-white" strokeWidth={3} />
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Check className="w-6 h-6 text-white" strokeWidth={3} />
                   </div>
-                  <span className="text-lg text-white font-medium pt-1.5">
+                  <span className="text-xl text-white font-medium pt-2"
+                        style={{textShadow: '0 1px 8px rgba(0,0,0,0.1)'}}>
                     {bullet}
                   </span>
                 </div>
@@ -61,30 +63,32 @@ const ProposalSlide = ({ slide }) => {
           </div>
         </div>
 
-        {/* Right column - What's included */}
+        {/* Right column - What's included with premium styling */}
         <div className="space-y-6">
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border-2 border-white/20 shadow-lg">
-            <h3 className={`${typography.h3} text-white mb-6 flex items-center gap-3`}>
-              <div className="w-2 h-8 bg-white/50 rounded-full" />
+          <div className="bg-white/12 backdrop-blur-lg p-10 rounded-3xl border-2 border-white/25 shadow-premium">
+            <h3 className={`${typography.h3} text-white mb-8 flex items-center gap-4`}
+                style={{textShadow: '0 2px 12px rgba(0,0,0,0.2)'}}>
+              <div className="w-2 h-10 bg-gradient-to-b from-white to-white/60 rounded-full shadow-glow-blue" />
               {slide.includesTitle}
             </h3>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               {slide.includes.map((item, index) => {
                 const Icon = includeIcons[index % includeIcons.length];
                 return (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20 hover:border-white/40 hover:shadow-md transition-all duration-300 group animate-fade-in opacity-0"
+                    className="group flex items-center gap-5 p-5 bg-white/10 rounded-2xl border border-white/25 hover:border-white/50 hover:bg-white/15 hover:shadow-premium hover:scale-[1.02] transition-all duration-500 animate-fade-in opacity-0"
                     style={{
                       animationDelay: `${(index + 3) * 100}ms`,
                       animationFillMode: 'forwards'
                     }}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6 text-white" />
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                      <Icon className="w-7 h-7 text-white" strokeWidth={2.5} />
                     </div>
-                    <span className="text-base font-medium text-white transition-colors">
+                    <span className="text-lg font-medium text-white"
+                          style={{textShadow: '0 1px 8px rgba(0,0,0,0.1)'}}>
                       {item}
                     </span>
                   </div>
