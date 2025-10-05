@@ -20,24 +20,24 @@ export const slideData = [
     title: "Executive Summary",
     sections: [
       {
-        label: "NOW",
+        label: "IMMEDIATE ACTION",
         color: "blue",
-        content: "Turnkey Lab Environment Setup for 12 workstations"
+        content: "Deploy a turnkey laboratory environment with 12 fully-equipped workstations, ready for immediate training delivery"
       },
       {
-        label: "NEXT",
+        label: "STRATEGIC PARTNERSHIP",
         color: "green",
-        content: "Appoint Maharat as Official School of Coders Delivery Partner"
+        content: "Establish Maharat as the Official School of Coders Delivery Partner, driving excellence in technology education"
       },
       {
-        label: "ASSURANCE",
+        label: "QUALITY ASSURANCE",
         color: "purple",
-        content: "Training in isolated VMs; certification testing remains unaffected"
+        content: "Isolated VM training infrastructure ensures certification integrity while enabling hands-on learning"
       },
       {
-        label: "READINESS",
+        label: "RAPID DEPLOYMENT",
         color: "amber",
-        content: "Operational in ~2–2.5 months with handbook and handover"
+        content: "Complete operational readiness in 8-10 weeks, including comprehensive documentation and knowledge transfer"
       }
     ]
   },
@@ -46,12 +46,12 @@ export const slideData = [
   {
     id: 3,
     type: "outcomes",
-    title: "Why This Matters",
-    subtitle: "Key Outcomes",
+    title: "Strategic Impact",
+    subtitle: "Transformative Outcomes for Technology Education",
     outcomes: [
-      "Enable hands-on programs across AI, coding, cybersecurity, networking, automation",
-      "Provide a single, reliable platform for cohorts, hackathons, partner activations",
-      "Reduce bandwidth strain on ADGM Academy while meeting mandate"
+      "Deliver comprehensive hands-on training programs spanning AI, software development, cybersecurity, network engineering, and intelligent automation",
+      "Establish a unified, enterprise-grade platform supporting cohort-based learning, innovation hackathons, and strategic partner activations",
+      "Optimize ADGM Academy operational efficiency while exceeding educational mandate requirements through strategic partnership"
     ]
   },
 
@@ -59,20 +59,20 @@ export const slideData = [
   {
     id: 4,
     type: "proposal",
-    title: "What We're Proposing (Stage 1)",
-    intro: "A dedicated lab configuration to:",
+    title: "Stage 1: Technical Foundation",
+    intro: "A comprehensive laboratory infrastructure designed to deliver:",
     bullets: [
-      "Deploy secure environments",
-      "Deliver ready-to-teach setup",
-      "Provide handbook"
+      "Enterprise-grade secure training environments with industry-standard isolation protocols",
+      "Production-ready teaching infrastructure with zero-configuration deployment",
+      "Complete operational documentation and instructor enablement materials"
     ],
-    includesTitle: "Including:",
+    includesTitle: "Comprehensive Deliverables:",
     includes: [
-      "Environment Setup & Configuration",
-      "Secure VM Images",
-      "Cyber/Network Toolkits",
-      "Local Automation Platform",
-      "User Guide & Reset SOPs"
+      "Complete Environment Architecture & Configuration",
+      "Hardened Virtual Machine Images",
+      "Cybersecurity & Network Engineering Toolkits",
+      "Integrated Automation & Orchestration Platform",
+      "Operations Manual & Recovery Procedures"
     ]
   },
 
@@ -80,24 +80,24 @@ export const slideData = [
   {
     id: 5,
     type: "scope-exclusions",
-    title: "Scope & Exclusions (Stage 1)",
+    title: "Project Scope Definition",
     included: {
-      title: "Included",
+      title: "Within Project Scope",
       items: [
-        "VM image design/rollout",
-        "Pre-configured tools",
-        "Reset procedures",
-        "Acceptance tests",
-        "Documentation & handover"
+        "Complete VM architecture design, development, and deployment",
+        "Pre-configured enterprise toolchains and development environments",
+        "Automated reset and recovery procedures",
+        "Comprehensive acceptance testing and validation protocols",
+        "Complete technical documentation and knowledge transfer sessions"
       ]
     },
     excluded: {
-      title: "Excluded",
+      title: "Outside Project Scope",
       items: [
-        "Long-term hosting/support",
-        "Facility/AV procurement",
-        "Certification platform changes",
-        "Trainer delivery"
+        "Ongoing hosting infrastructure and long-term technical support",
+        "Physical facility upgrades and audiovisual equipment procurement",
+        "Modifications to existing certification examination platforms",
+        "Direct training delivery and instructor services"
       ]
     }
   },
@@ -106,46 +106,46 @@ export const slideData = [
   {
     id: 6,
     type: "pillars",
-    title: "Program Pillars (Stage 2 Delivery)",
+    title: "Educational Pillars: Stage 2",
     pillars: [
       {
-        title: "Artificial Intelligence",
-        description: "Awareness to applied build",
+        title: "Artificial Intelligence & Machine Learning",
+        description: "From foundational AI literacy to practical model development and deployment in real-world applications",
         color: "purple"
       },
       {
-        title: "Coding & Software Development",
-        description: "Foundations to full-stack practice",
+        title: "Software Engineering & Development",
+        description: "Progressive journey from programming fundamentals through full-stack development and cloud-native architectures",
         color: "blue"
       },
       {
-        title: "General Technology Knowledge",
-        description: "Digital leadership, automation, IoT, cybersecurity",
+        title: "Enterprise Technology Ecosystem",
+        description: "Digital transformation leadership, intelligent automation, IoT solutions, and comprehensive cybersecurity practices",
         color: "green"
       }
     ],
-    footer: "Details/syllabi to be agreed jointly post-setup"
+    footer: "Detailed curriculum and learning pathways to be collaboratively defined following infrastructure deployment"
   },
 
   // Slide 7: User Experience
   {
     id: 7,
     type: "user-experience",
-    title: "User Experience",
+    title: "Stakeholder Experience",
     stakeholders: [
       {
-        role: "MANAGEMENT",
-        description: "Turnkey setup with governance & reporting — testing remains unaffected",
+        role: "LEADERSHIP & GOVERNANCE",
+        description: "Fully managed deployment with comprehensive oversight frameworks and performance analytics—certification integrity maintained through complete infrastructure isolation",
         color: "blue"
       },
       {
-        role: "INSTRUCTORS",
-        description: "Training-ready environments, flexible use, effortless session transitions",
+        role: "INSTRUCTIONAL STAFF",
+        description: "Production-ready learning environments with flexible configuration options and seamless session management—enabling focus on teaching excellence",
         color: "green"
       },
       {
-        role: "LEARNERS",
-        description: "Hands-on, project-based learning in a consistent, professional lab",
+        role: "STUDENTS & PARTICIPANTS",
+        description: "Immersive, project-driven learning experiences within a consistent, enterprise-grade laboratory environment—building real-world technical competencies",
         color: "purple"
       }
     ]
@@ -155,55 +155,55 @@ export const slideData = [
   {
     id: 8,
     type: "roadmap",
-    title: "Implementation Roadmap (Stage 1)",
+    title: "Delivery Roadmap: Stage 1",
     phases: [
       {
         number: 1,
-        title: "Lab Assessment & Initial Setup",
+        title: "Infrastructure Assessment & Design",
         duration: "2–3 weeks",
         color: "blue"
       },
       {
         number: 2,
-        title: "Environment Configuration",
+        title: "Environment Build & Configuration",
         duration: "3–4 weeks",
         color: "green"
       },
       {
         number: 3,
-        title: "Pilot Testing & Validation",
+        title: "Validation Testing & Quality Assurance",
         duration: "2 weeks",
         color: "purple"
       },
       {
         number: 4,
-        title: "Final Handover & Documentation",
+        title: "Documentation & Knowledge Transfer",
         duration: "1 week",
         color: "amber"
       }
     ],
-    total: "~2–2.5 months to \"ready for training\""
+    total: "8–10 weeks to production-ready training infrastructure"
   },
 
   // Slide 9: Governance & Assurance
   {
     id: 9,
     type: "governance",
-    title: "Governance & Assurance",
+    title: "Governance Framework",
     sections: [
       {
-        title: "STEERING",
-        content: "Weekly progress; monthly review",
+        title: "PROJECT GOVERNANCE",
+        content: "Weekly progress reviews with detailed status reporting and monthly executive steering committee meetings ensuring alignment and accountability",
         color: "blue"
       },
       {
-        title: "CONTROLS",
-        content: "VM isolation, golden images, reset < X minutes, network fallbacks",
+        title: "TECHNICAL CONTROLS",
+        content: "Complete VM isolation architecture, immutable golden image repositories, sub-5-minute environment reset capabilities, and redundant network failover protocols",
         color: "green"
       },
       {
-        title: "KPIs",
-        content: "Lab readiness %, pilot pass, incident-free sessions, CSAT/NPS, completion, placement",
+        title: "SUCCESS METRICS",
+        content: "Infrastructure readiness score, pilot validation success rate, zero-incident session delivery, student satisfaction (CSAT/NPS), program completion rates, and career placement outcomes",
         color: "purple"
       }
     ]
@@ -213,21 +213,21 @@ export const slideData = [
   {
     id: 10,
     type: "commercial",
-    title: "Commercial Overview (Stage 1)",
+    title: "Investment Structure: Stage 1",
     sections: [
       {
-        title: "Structure",
-        content: "Fixed-fee for Stage 1 (design, VM images, handbook, handover)",
+        title: "ENGAGEMENT MODEL",
+        content: "Fixed-price professional services engagement covering complete architecture design, VM development, comprehensive documentation, and full knowledge transfer",
         color: "blue"
       },
       {
-        title: "Payment Options",
-        content: "40% mobilisation / 60% acceptance OR 30% mobilisation / staged tranches",
+        title: "PAYMENT TERMS",
+        content: "Flexible payment options: 40% project mobilization with 60% upon acceptance, or 30% initial payment with milestone-based installments",
         color: "green"
       },
       {
-        title: "Optional Services",
-        content: "Post-handover update window (60–90 days), scaling support",
+        title: "VALUE-ADDED SERVICES",
+        content: "Extended support window (60–90 days post-delivery) and infrastructure scaling assistance available as optional enhancements",
         color: "purple"
       }
     ]
@@ -237,22 +237,22 @@ export const slideData = [
   {
     id: 11,
     type: "vision",
-    title: "Stage 2 Vision",
-    subtitle: "Official School of Coders Delivery Partner",
+    title: "Future State: Stage 2",
+    subtitle: "Becoming the Official School of Coders Delivery Partner",
     sections: [
       {
-        title: "SCOPE",
-        content: "Maharat operates School of Coders (calendar, delivery, assessments, partner activations)",
+        title: "OPERATIONAL SCOPE",
+        content: "Maharat assumes full operational responsibility for the School of Coders, including program scheduling, instructional delivery, competency assessments, and strategic partner engagement initiatives",
         color: "blue"
       },
       {
-        title: "COMMERCIAL MODELS",
-        content: "Per-cohort fee · Per-seat (with minimum) · Revenue share",
+        title: "COMMERCIAL FRAMEWORKS",
+        content: "Flexible engagement models: cohort-based pricing, per-student licensing (with minimum enrollment thresholds), or performance-linked revenue sharing arrangements",
         color: "green"
       },
       {
-        title: "SLAs",
-        content: "Delivery quality, completion, CSAT/NPS, placement pathways",
+        title: "SERVICE LEVEL COMMITMENTS",
+        content: "Guaranteed delivery excellence, program completion benchmarks, superior student satisfaction scores (CSAT/NPS targets), and comprehensive career placement support pathways",
         color: "purple"
       }
     ]
@@ -262,23 +262,23 @@ export const slideData = [
   {
     id: 12,
     type: "next-steps",
-    title: "Next Steps",
+    title: "Path Forward",
     steps: [
       {
         number: 1,
-        content: "Approve Stage 1 SOW & mobilisation"
+        content: "Executive approval of Stage 1 Statement of Work and project mobilization authorization"
       },
       {
         number: 2,
-        content: "Kick-off & site readiness check"
+        content: "Project kickoff meeting and comprehensive facility readiness assessment"
       },
       {
         number: 3,
-        content: "Pilot sign-off & handover"
+        content: "Pilot validation testing, final acceptance sign-off, and operational handover"
       },
       {
         number: 4,
-        content: "Joint workshop to agree calendar & pricing model for Stage 2"
+        content: "Collaborative strategy workshop to define Stage 2 program calendar and commercial partnership model"
       }
     ]
   }

@@ -1,100 +1,89 @@
 import React from 'react';
 import { Clock, Target, Shield, Zap } from 'lucide-react';
-import { typography, spacing } from '../../styles/colors';
-import Card from '../ui/Card';
 
 /**
  * Executive Summary Slide - Slide 2
- * Enhanced with icons and premium card design
+ * Premium professional design with enhanced visual hierarchy
  */
 const ExecutiveSummarySlide = ({ slide }) => {
   const sectionConfig = {
     blue: {
-      bg: 'bg-white/10 backdrop-blur-md',
-      border: 'border-l-blue-300',
-      text: 'text-blue-300',
       icon: Target,
-      iconBg: 'bg-gradient-to-br from-blue-400 to-blue-600'
+      iconColor: '#286EE1',
+      accentColor: '#E3F2FD',
+      borderColor: '#286EE1'
     },
     green: {
-      bg: 'bg-white/10 backdrop-blur-md',
-      border: 'border-l-green-300',
-      text: 'text-green-300',
       icon: Zap,
-      iconBg: 'bg-gradient-to-br from-green-400 to-green-600'
+      iconColor: '#10b981',
+      accentColor: '#E8F5E9',
+      borderColor: '#10b981'
     },
     purple: {
-      bg: 'bg-white/10 backdrop-blur-md',
-      border: 'border-l-purple-300',
-      text: 'text-purple-300',
       icon: Shield,
-      iconBg: 'bg-gradient-to-br from-purple-400 to-purple-600'
+      iconColor: '#4B3095',
+      accentColor: '#F3E5F5',
+      borderColor: '#4B3095'
     },
     amber: {
-      bg: 'bg-white/10 backdrop-blur-md',
-      border: 'border-l-amber-300',
-      text: 'text-amber-300',
       icon: Clock,
-      iconBg: 'bg-gradient-to-br from-amber-400 to-amber-600'
+      iconColor: '#f59e0b',
+      accentColor: '#FFF8E1',
+      borderColor: '#f59e0b'
     }
   };
 
   return (
-    <div className={`relative w-full h-screen ${spacing.slide} flex flex-col bg-gradient-to-br from-primary-blue1 via-primary-blue2 to-accent-purple1 overflow-hidden`}>
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent-purple2/10 rounded-full blur-3xl" />
-      </div>
-
+    <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
       {/* Content wrapper */}
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Header with gradient accent */}
-        <div className="mb-12">
-          <div className="inline-block">
-            <h2 className={`${typography.h2} text-white relative`}>
-              {slide.title}
-              <div className="absolute -bottom-2 left-0 w-24 h-1 bg-white/50 rounded-full" />
-            </h2>
-          </div>
+      <div className="h-full flex flex-col max-w-7xl mx-auto w-full">
+        {/* Header with enhanced typography */}
+        <div className="mb-16">
+          <h2 className="text-5xl font-bold text-slate-900 mb-3 tracking-tight">
+            {slide.title}
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary-blue1 to-primary-blue2 rounded-full" />
         </div>
 
-      <div className="grid gap-7 flex-1">
-        {slide.sections.map((section, index) => {
-          const config = sectionConfig[section.color];
-          const Icon = config.icon;
+        {/* Grid layout with enhanced spacing */}
+        <div className="grid md:grid-cols-2 gap-8 flex-1">
+          {slide.sections.map((section, index) => {
+            const config = sectionConfig[section.color];
+            const Icon = config.icon;
 
-          return (
-            <div
-              key={index}
-              className={`group ${config.bg} ${config.border} border-l-[6px] rounded-2xl p-8 shadow-premium hover:shadow-premium-lg hover:scale-[1.02] transition-all duration-500 animate-slide-in opacity-0`}
-              style={{
-                animationDelay: `${index * 100}ms`,
-                animationFillMode: 'forwards'
-              }}
-            >
-              <div className="flex items-start gap-8">
-                {/* Icon with premium styling */}
-                <div className={`flex-shrink-0 w-20 h-20 ${config.iconBg} rounded-2xl flex items-center justify-center shadow-premium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+            return (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-10 border-2 border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 animate-slide-in opacity-0"
+                style={{
+                  animationDelay: `${index * 150}ms`,
+                  animationFillMode: 'forwards'
+                }}
+              >
+                {/* Icon with gradient background */}
+                <div
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: config.accentColor }}
+                >
+                  <Icon className="w-8 h-8" style={{ color: config.iconColor }} strokeWidth={2.5} />
                 </div>
 
-                {/* Content with refined typography */}
-                <div className="flex-1 space-y-3">
-                  <span className={`text-sm font-bold uppercase tracking-[0.2em] ${config.text}`}
-                        style={{letterSpacing: '0.2em'}}>
-                    {section.label}
-                  </span>
-                  <p className="text-2xl text-white leading-relaxed font-medium"
-                     style={{textShadow: '0 2px 10px rgba(0,0,0,0.1)'}}>
-                    {section.content}
-                  </p>
+                {/* Label with enhanced styling */}
+                <div
+                  className="text-xs font-extrabold uppercase tracking-[0.15em] mb-4 pb-3 border-b-2"
+                  style={{ color: config.borderColor, borderColor: config.accentColor }}
+                >
+                  {section.label}
                 </div>
+
+                {/* Content with improved readability */}
+                <p className="text-base text-slate-700 leading-relaxed font-normal">
+                  {section.content}
+                </p>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

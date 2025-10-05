@@ -34,9 +34,9 @@ const CoverSlide = ({ slide }) => {
         </div>
 
         {/* Main content - centered and expanded */}
-        <div className="flex-1 flex flex-col items-center justify-center space-y-14 -mt-12">
+        <div className="flex-1 flex flex-col items-center justify-center space-y-16 -mt-16">
           {/* Badge with premium styling */}
-          <div className="inline-block px-10 py-4 bg-white/15 backdrop-blur-lg rounded-full border border-white/40 shadow-premium animate-scale-in">
+          <div className="inline-block px-12 py-5 bg-white/15 backdrop-blur-lg rounded-full border-2 border-white/40 shadow-premium animate-scale-in">
             <span className="text-sm font-bold tracking-[0.3em] uppercase text-white/95" style={{letterSpacing: '0.3em'}}>
               Partnership Proposal 2025
             </span>
@@ -52,13 +52,13 @@ const CoverSlide = ({ slide }) => {
           </h1>
 
           {/* Refined divider with elegant design */}
-          <div className="flex items-center gap-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
-            <div className="h-[2px] w-40 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+          <div className="flex items-center gap-10 animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="h-[2px] w-48 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
             <div className="relative">
-              <div className="w-3 h-3 rounded-full bg-white/80 shadow-glow-blue" />
-              <div className="absolute inset-0 w-6 h-6 -m-1.5 rounded-full bg-white/20 animate-ping" />
+              <div className="w-4 h-4 rounded-full bg-white/90 shadow-glow-blue" />
+              <div className="absolute inset-0 w-8 h-8 -m-2 rounded-full bg-white/20 animate-ping" />
             </div>
-            <div className="h-[2px] w-40 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+            <div className="h-[2px] w-48 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
           </div>
 
           {/* Subtitle with premium typography */}
@@ -74,20 +74,20 @@ const CoverSlide = ({ slide }) => {
 
         {/* Bottom section with premium card design */}
         <div className="absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center pointer-events-none">
-          <div className="flex items-center justify-center gap-10 mt-[68vh] pointer-events-auto">
-            <div className="group text-center px-8 py-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
-              <div className="text-4xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">Step 1</div>
-              <div className="text-xs uppercase tracking-[0.2em] opacity-90 font-medium">Lab Setup</div>
+          <div className="flex items-center justify-center gap-12 mt-[70vh] pointer-events-auto">
+            <div className="group text-center px-10 py-7 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
+              <div className="text-5xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">Step 1</div>
+              <div className="text-xs uppercase tracking-[0.25em] opacity-90 font-bold">Lab Setup</div>
             </div>
-            <div className="w-[2px] h-20 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
-            <div className="group text-center px-8 py-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
-              <div className="text-4xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">Step 2</div>
-              <div className="text-xs uppercase tracking-[0.2em] opacity-90 font-medium">Launch School</div>
+            <div className="w-[2px] h-24 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+            <div className="group text-center px-10 py-7 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
+              <div className="text-5xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">Step 2</div>
+              <div className="text-xs uppercase tracking-[0.25em] opacity-90 font-bold">Launch School</div>
             </div>
-            <div className="w-[2px] h-20 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
-            <div className="group text-center px-8 py-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
-              <div className="text-4xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">2.5 Mo</div>
-              <div className="text-xs uppercase tracking-[0.2em] opacity-90 font-medium">Timeline</div>
+            <div className="w-[2px] h-24 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+            <div className="group text-center px-10 py-7 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-premium hover:bg-white/15 hover:shadow-premium-lg hover:scale-105 transition-all duration-500">
+              <div className="text-5xl font-bold mb-3 bg-gradient-to-br from-white to-white/80 bg-clip-text text-transparent">8-10 Wks</div>
+              <div className="text-xs uppercase tracking-[0.25em] opacity-90 font-bold">Timeline</div>
             </div>
           </div>
         </div>

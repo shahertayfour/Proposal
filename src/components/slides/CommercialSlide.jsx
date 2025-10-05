@@ -1,57 +1,39 @@
 import React from 'react';
 import { DollarSign, CreditCard, Star } from 'lucide-react';
-import { typography, spacing } from '../../styles/colors';
 
 /**
  * Commercial Slide - Slide 10
- * Enhanced commercial overview with icons
+ * Clean professional commercial overview
  */
 const CommercialSlide = ({ slide }) => {
   const sectionConfig = {
     blue: {
       icon: DollarSign,
-      gradient: 'from-primary-blue1 to-primary-blue2',
-      bg: 'from-blue-50 to-blue-100/60',
-      text: 'text-primary-blue1',
-      border: 'border-primary-blue1'
+      gradient: 'from-primary-blue1 to-primary-blue2'
     },
     green: {
       icon: CreditCard,
-      gradient: 'from-green-500 to-green-600',
-      bg: 'from-green-50 to-green-100/60',
-      text: 'text-green-700',
-      border: 'border-green-500'
+      gradient: 'from-green-500 to-green-600'
     },
     purple: {
       icon: Star,
-      gradient: 'from-accent-purple1 to-accent-purple2',
-      bg: 'from-purple-50 to-purple-100/60',
-      text: 'text-accent-purple1',
-      border: 'border-accent-purple1'
+      gradient: 'from-accent-purple1 to-accent-purple2'
     }
   };
 
   return (
-    <div className={`relative w-full h-screen ${spacing.slide} flex flex-col bg-gradient-to-br from-primary-blue1 via-primary-blue3 to-accent-purple2 overflow-hidden`}>
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent-purple2/10 rounded-full blur-3xl" />
-      </div>
-
+    <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
       {/* Content wrapper */}
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Header */}
-        <div className="mb-12">
-          <div className="inline-block">
-            <h2 className={`${typography.h2} text-white relative`}>
-              {slide.title}
-              <div className="absolute -bottom-2 left-0 w-24 h-1 bg-white/50 rounded-full" />
-            </h2>
-          </div>
+      <div className="h-full flex flex-col max-w-7xl mx-auto w-full">
+        {/* Header with enhanced styling */}
+        <div className="mb-16">
+          <h2 className="text-5xl font-bold text-slate-900 mb-3 tracking-tight">
+            {slide.title}
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary-blue1 to-primary-blue2 rounded-full" />
         </div>
 
-      <div className="space-y-8 flex-1">
+      <div className="space-y-6">
         {slide.sections.map((section, index) => {
           const config = sectionConfig[section.color];
           const Icon = config.icon;
@@ -59,24 +41,24 @@ const CommercialSlide = ({ slide }) => {
           return (
             <div
               key={index}
-              className={`group relative bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg transition-all duration-700 border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] animate-slide-in opacity-0`}
+              className="group bg-white rounded-2xl p-10 border-2 border-slate-100 animate-slide-in opacity-0 hover:border-slate-200 hover:shadow-xl transition-all duration-300"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
               <div className="flex items-start gap-8">
-                {/* Icon */}
-                <div className={`flex-shrink-0 w-20 h-20 bg-gradient-to-br ${config.gradient} rounded-2xl flex items-center justify-center shadow-premium transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                  <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                {/* Icon with premium styling */}
+                <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br ${config.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-8 h-8 text-white" strokeWidth={2.5} />
                 </div>
 
-                {/* Content */}
+                {/* Content with improved typography */}
                 <div className="flex-1">
-                  <h3 className={`${typography.h3} text-white mb-4 font-bold`} style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">
                     {section.title}
                   </h3>
-                  <p className="text-2xl text-white/90 leading-relaxed" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
+                  <p className="text-lg text-slate-700 leading-relaxed">
                     {section.content}
                   </p>
                 </div>

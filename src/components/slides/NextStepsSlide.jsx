@@ -1,10 +1,9 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
-import { typography, spacing } from '../../styles/colors';
+import { CheckCircle2 } from 'lucide-react';
 
 /**
  * Next Steps Slide - Slide 12
- * Enhanced action items with modern design and call-to-action
+ * Clean professional action items with call-to-action
  */
 const NextStepsSlide = ({ slide }) => {
   const gradients = [
@@ -15,79 +14,59 @@ const NextStepsSlide = ({ slide }) => {
   ];
 
   return (
-    <div className={`relative w-full h-screen ${spacing.slide} flex flex-col bg-gradient-to-br from-primary-blue1 via-primary-blue2 to-accent-purple1 overflow-hidden`}>
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 w-[1000px] h-[1000px] bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent-purple2/10 rounded-full blur-3xl" />
-      </div>
-
+    <div className="relative w-full h-screen p-16 flex flex-col bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
       {/* Content wrapper */}
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Header */}
-        <div className="mb-12">
-          <div className="inline-block">
-            <h2 className={`${typography.h2} text-white relative`}>
-              {slide.title}
-              <div className="absolute -bottom-2 left-0 w-24 h-1 bg-white/50 rounded-full" />
-            </h2>
-          </div>
-          <p className="text-2xl text-white/80 mt-4" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
+      <div className="h-full flex flex-col max-w-7xl mx-auto w-full">
+        {/* Header with enhanced styling */}
+        <div className="mb-16">
+          <h2 className="text-5xl font-bold text-slate-900 mb-3 tracking-tight">
+            {slide.title}
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary-blue1 to-primary-blue2 rounded-full mb-5" />
+          <p className="text-xl text-slate-600 font-medium">
             Your Roadmap to Success
           </p>
         </div>
 
-      <div className="grid md:grid-cols-2 gap-10 flex-1">
+      <div className="grid md:grid-cols-2 gap-8">
         {slide.steps.map((step, index) => {
           const gradient = gradients[index % gradients.length];
 
           return (
             <div
               key={index}
-              className="group relative bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg transition-all duration-700 border-2 border-white/25 hover:border-white/50 hover:scale-[1.02] animate-slide-in opacity-0"
+              className="group bg-white rounded-2xl p-10 border-2 border-slate-100 animate-slide-in opacity-0 hover:border-slate-200 hover:shadow-xl transition-all duration-300"
               style={{
                 animationDelay: `${index * 100}ms`,
                 animationFillMode: 'forwards'
               }}
             >
-              {/* Number Badge */}
-              <div className={`absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-br ${gradient} rounded-2xl shadow-premium flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                <span className="text-4xl font-bold text-white" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)' }}>
-                  {step.number}
-                </span>
+              {/* Number Badge with premium styling */}
+              <div className="flex items-center gap-5 mb-6">
+                <div className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <span className="text-2xl font-bold text-white">
+                    {step.number}
+                  </span>
+                </div>
+                <CheckCircle2 className="w-6 h-6 text-green-500 ml-auto" strokeWidth={2.5} />
               </div>
 
-              {/* Checkmark icon */}
-              <div className="absolute top-4 right-4">
-                <CheckCircle2 className="w-10 h-10 text-green-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500" strokeWidth={2.5} />
-              </div>
-
-              {/* Content */}
-              <div className="pt-6 pl-4">
-                <p className="text-2xl text-white leading-relaxed font-medium" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
-                  {step.content}
-                </p>
-              </div>
-
-              {/* Arrow indicator */}
-              <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <ArrowRight className="w-8 h-8 text-white" strokeWidth={2.5} />
-              </div>
-
-              {/* Bottom gradient bar */}
-              <div className={`absolute bottom-0 left-0 right-0 h-2 bg-white/30 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              {/* Content with improved typography */}
+              <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                {step.content}
+              </p>
             </div>
           );
         })}
       </div>
 
-      {/* Call to Action */}
-      <div className="mt-12 pt-8">
-        <div className="bg-white/12 backdrop-blur-lg rounded-3xl p-10 shadow-premium hover:shadow-premium-lg text-center border-2 border-white/25 hover:border-white/50 transition-all duration-700">
-          <p className="text-4xl font-bold text-white mb-2" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.02em' }}>
+      {/* Call to Action with premium styling */}
+      <div className="mt-12">
+        <div className="bg-white rounded-2xl px-14 py-12 border-2 border-slate-100 text-center hover:border-slate-200 hover:shadow-xl transition-all duration-300">
+          <p className="text-3xl font-bold text-slate-900 mb-4">
             Ready to Transform Education Together?
           </p>
-          <p className="text-2xl text-white/90" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.15)', letterSpacing: '0.01em' }}>
+          <p className="text-lg text-slate-600 font-medium">
             Let's build the future of tech education in the UAE
           </p>
         </div>
