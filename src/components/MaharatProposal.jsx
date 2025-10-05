@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { slideData, presentationMeta } from '../data/slideContent';
 import NavBar from './ui/NavBar';
-import SlideNavigation from './ui/SlideNavigation';
 import ProgressIndicator from './ui/ProgressIndicator';
-import SlideTransition from './ui/SlideTransition';
-import JourneyMap from './ui/JourneyMap';
-import NarrativeBanner from './ui/NarrativeBanner';
 
 // Import all slide components
 import CoverSlide from './slides/CoverSlide';
@@ -158,38 +154,13 @@ const MaharatProposal = () => {
             </div>
           </div>
 
-          {/* Interactive Navigation Menu */}
-          <SlideNavigation
-            currentSlide={currentSlide}
-            totalSlides={slideData.length}
-            onNavigate={goToSlide}
-            slideData={slideData}
-          />
-
-          {/* Visual Journey Map */}
-          <JourneyMap
-            currentSlide={currentSlide}
-            slideData={slideData}
-            onNavigate={goToSlide}
-          />
-
-          {/* Progress Indicator */}
+          {/* Progress Indicator - Shows slide count and progress */}
           <ProgressIndicator
             currentSlide={currentSlide}
             totalSlides={slideData.length}
           />
 
-          {/* Story-Driven Transition Prompts */}
-          <SlideTransition
-            currentSlide={currentSlide}
-            nextSlide={currentSlide < slideData.length - 1 ? slideData[currentSlide + 1] : null}
-            onNext={goToNext}
-          />
-
-          {/* Narrative Banner */}
-          <NarrativeBanner narrative={slideData[currentSlide].narrative} />
-
-          {/* Classic Navigation (kept for compatibility) */}
+          {/* Navigation Controls - Arrow buttons to move between slides */}
           <NavBar
             currentSlide={currentSlide}
             totalSlides={slideData.length}
